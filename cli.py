@@ -2,7 +2,7 @@
 # and returns a tab-delimited CSV as stdout
 
 import argparse
-from parser import parser
+from vcf_parser import parser
 
 from api_client import fetch_annotations
 from constants import *
