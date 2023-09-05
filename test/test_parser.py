@@ -1,5 +1,5 @@
 import os
-from parser import parser
+from vcf_parser import parser
 
 import pytest
 

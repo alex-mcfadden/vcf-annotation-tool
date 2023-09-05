@@ -27,7 +27,7 @@ def fetch_annotations(vcf_data: list[dict], excluded: list[str] = None) -> list[
     for chunk in data_chunks:
         response = fetch_response(chunk)
         for i, variant in enumerate(response):
-            if variant[TRANSCRIPT_CONSEQUENCES]:  # there are genes affected
+            if variant.get(TRANSCRIPT_CONSEQUENCES):  # there are genes affected
                 for tc in variant[TRANSCRIPT_CONSEQUENCES]:
                     data = chunk[i].copy()
                     data[GENE_SYMBOL] = tc[GENE_SYMBOL]

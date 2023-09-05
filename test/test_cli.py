@@ -40,7 +40,7 @@ class TestCLI:
     ):
         with patch("sys.stdout", new_callable=StringIO) as mock_stdout:
             with patch("cli.fetch_annotations", return_value=mock_annotations):
-                with patch("parser.parser", return_value=mock_parser_return):
+                with patch("vcf_parser.parser", return_value=mock_parser_return):
                     main(filename)
                     assert mock_stdout.getvalue() == expected_output
 
@@ -48,7 +48,7 @@ class TestCLI:
         self, filename, mock_annotations, mock_parser_return, expected_output
     ):
         with patch("cli.fetch_annotations", return_value=mock_annotations):
-            with patch("parser.parser", return_value=mock_parser_return):
+            with patch("vcf_parser.parser", return_value=mock_parser_return):
                 main(filename, output="test.csv")
                 with open("test.csv", "r") as f:
                     assert f.read() == expected_output
