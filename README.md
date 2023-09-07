@@ -26,7 +26,7 @@ pip install .
     
 ```python
 from vcf_annotation import annotate
-annotate('path/to/input.vcf', 'path/to/output.csv)
+annotate('path/to/input.vcf', 'path/to/output.csv')
 ```
 ## Installation
 
@@ -60,14 +60,7 @@ pip3 install -r requirements.txt
 
 ## Usage
 
-This tool expects an input VCF file made from the [GrCh37](https://grch37.ensembl.org/index.html) reference genome. The tool will annotate each variant in the VCF file by accessing the [Ensembl REST API](https://grch37.rest.ensembl.org) to retrieve the following information:
-
-- HGVS notation
-- Gene Symbol
-- Minor Allele Frequency (MAF)
-
-
-This data is collected and returned as a comma-separated values, either as a CSV file 
+This tool expects an input VCF file made from the [GrCh37](https://grch37.ensembl.org/index.html) reference genome. The tool will annotate each variant in the VCF file by accessing the [Ensembl REST API](https://grch37.rest.ensembl.org) to retrieve variant effect information (see Output below for details). This data is collected and returned as a comma-separated values, either as a CSV file 
 or as stdout if no filename is supplied (this allows the user to pipe the output to 
 another program).
 
